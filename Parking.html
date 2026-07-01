@@ -21,12 +21,13 @@
   .today-banner.audi   { background: #0055b3; }
   .today-banner.kodiaq { background: #8b5a00; }
   .today-banner.no-res { background: #8e8e93; }
+  .today-banner.dup    { background: #ff9500; }
   .today-banner .ti  { font-size: 28px; }
-  .today-banner .lbl { font-size: 12px; opacity: 0.8; font-weight: 500; }
+  .today-banner .lbl { font-size: 12px; opacity: 0.85; font-weight: 500; }
   .today-banner .val { font-size: 18px; font-weight: 700; line-height: 1.2; }
   .today-banner .sv  { font-size: 13px; opacity: 0.85; margin-top: 1px; }
 
-  .car-tabs { display: flex; gap: 8px; padding: 12px 16px 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .car-tabs { display: flex; gap: 8px; padding: 12px 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .car-tabs::-webkit-scrollbar { display: none; }
   .car-tab { flex-shrink: 0; border: none; border-radius: 20px; padding: 7px 16px; font-size: 13px; font-weight: 600; cursor: pointer; background: #e5e5ea; color: #8e8e93; }
   .car-tab.active-all    { background: #1c1c1e; color: #fff; }
@@ -34,7 +35,7 @@
   .car-tab.active-audi   { background: #0055b3; color: #fff; }
   .car-tab.active-kodiaq { background: #8b5a00; color: #fff; }
 
-  .time-tabs { display: flex; margin: 0 16px 8px; background: #e5e5ea; border-radius: 10px; padding: 2px; }
+  .time-tabs { display: flex; margin: 8px 16px; background: #e5e5ea; border-radius: 10px; padding: 2px; }
   .time-tab { flex: 1; text-align: center; padding: 6px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; color: #8e8e93; border: none; background: none; }
   .time-tab.active { background: #fff; color: #1c1c1e; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 
@@ -44,18 +45,18 @@
 
   .res-card { background: #fff; border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); position: relative; }
   .res-card.dup { border: 2px solid #ff9500; background: #fffbf5; }
-  .dup-badge { position: absolute; top: -8px; right: 12px; background: #ff9500; color: #fff; font-size: 10px; font-weight: 700; border-radius: 6px; padding: 2px 7px; }
+  .dup-badge { position: absolute; top: -9px; right: 12px; background: #ff9500; color: #fff; font-size: 10px; font-weight: 700; border-radius: 6px; padding: 2px 7px; }
 
   .date-col { min-width: 52px; text-align: center; flex-shrink: 0; }
   .day-name { font-size: 11px; color: #8e8e93; font-weight: 500; text-transform: uppercase; }
   .day-num  { font-size: 22px; font-weight: 700; line-height: 1.1; }
   .month    { font-size: 11px; color: #8e8e93; }
-  .vdiv { width: 1px; height: 40px; background: #e5e5ea; flex-shrink: 0; }
-  .info { flex: 1; }
+  .vdiv { width: 1px; height: 44px; background: #e5e5ea; flex-shrink: 0; }
+  .info { flex: 1; min-width: 0; }
   .loc  { font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
   .today-dot { width: 8px; height: 8px; background: #ff3b30; border-radius: 50%; flex-shrink: 0; }
   .car-tag { display: inline-block; margin-top: 3px; font-size: 12px; font-weight: 500; border-radius: 6px; padding: 2px 8px; }
-  .note-text { font-size: 11px; color: #8e8e93; margin-top: 2px; font-style: italic; }
+  .user-tag { display: inline-block; margin-top: 3px; margin-left: 4px; font-size: 11px; color: #8e8e93; }
 
   .car-mini   { background: #d4f5e2; color: #1a7f40; }
   .car-audi   { background: #d1e8ff; color: #0055b3; }
@@ -97,30 +98,32 @@
 
 <script>
 // === DATA ===
-// Poslední aktualizace: 2026-06-29
-// Zdroj: IMG_0450.PNG (Minik), IMG_0451.PNG (Úterý audi, zbytek minicooper)
-const UPDATED = '2026-06-29T16:30:00';
+// Zdroj: IMG_0450.PNG (Josh/Minik), IMG_0472.jpeg (Andreika)
+// IMG_0472 nahrazuje IMG_0451 — stejný uživatel Andreika, nová data
+// Duplicita: 7.7 — Josh=Mini Cooper, Andreika=Audi Q7 (různí uživatelé)
+const UPDATED = '2026-07-01T10:00:00';
 const DATA = [
-  { date:'2026-06-29', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-06-30', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-01', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-02', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-06', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-07', car:'Mini Cooper', loc:'SHQ0', note:'IMG_0450', dup:true },
-  { date:'2026-07-07', car:'Audi Q7',    loc:'SHQ0', note:'IMG_0451', dup:true },
-  { date:'2026-07-08', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-09', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-13', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-14', car:'Audi Q7',    loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-15', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-16', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
-  { date:'2026-07-20', car:'Mini Cooper', loc:'SHQ0', note:'', dup:false },
+  { date:'2026-06-29', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-06-30', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-07-01', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-07-02', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-07-07', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:true  },
+  { date:'2026-07-07', car:'Audi Q7',    loc:'SHQ0', user:'Andreika', dup:true  },
+  { date:'2026-07-08', car:'Mini Cooper', loc:'SHQ0', user:'Andreika', dup:false },
+  { date:'2026-07-09', car:'Mini Cooper', loc:'SHQ0', user:'Andreika', dup:false },
+  { date:'2026-07-13', car:'Mini Cooper', loc:'SHQ0', user:'Andreika', dup:false },
+  { date:'2026-07-14', car:'Audi Q7',    loc:'SHQ0', user:'Andreika', dup:false },
+  { date:'2026-07-15', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-07-16', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-07-20', car:'Mini Cooper', loc:'SHQ0', user:'Josh',     dup:false },
+  { date:'2026-07-21', car:'Audi Q7',    loc:'SHQ0', user:'Andreika', dup:false },
+  { date:'2026-07-22', car:'Mini Cooper', loc:'SHQ0', user:'Andreika', dup:false },
 ];
 
-const DAY_CS   = ['Ne','Po','Út','St','Čt','Pá','So'];
-const MON_CS   = ['led','úno','bře','dub','kvě','čvn','čvc','srp','zář','říj','lis','pro'];
-const LOC_CLS  = { SHQ0:'SHQ', NHQ0:'NHQ', HHQ0:'HHQ' };
-const CAR_KEY  = { 'Mini Cooper':'mini', 'Audi Q7':'audi', 'Kodiaq':'kodiaq' };
+const DAY_CS  = ['Ne','Po','Út','St','Čt','Pá','So'];
+const MON_CS  = ['led','úno','bře','dub','kvě','čvn','čvc','srp','zář','říj','lis','pro'];
+const LOC_CLS = { SHQ0:'SHQ', NHQ0:'NHQ', HHQ0:'HHQ' };
+const CAR_KEY = { 'Mini Cooper':'mini', 'Audi Q7':'audi', 'Kodiaq':'kodiaq' };
 
 let carFilter = 'all', timeFilter = 'upcoming';
 
@@ -138,20 +141,27 @@ function renderBanner() {
   const t = today();
   const todayRes = DATA.filter(r => r.date === t);
   const el = document.getElementById('today-banner');
-  if (todayRes.length) {
-    const r = todayRes[0];
-    const k = CAR_KEY[r.car] || 'mini';
-    el.innerHTML = `<div class="today-banner ${k}" style="margin:10px 16px 0">
-      <div class="ti">🚘</div>
-      <div><div class="lbl">DNES parkuješ v</div><div class="val">${r.loc}</div><div class="sv">${r.car}</div></div>
-    </div>`;
-  } else {
+  if (!todayRes.length) {
     const next = DATA.filter(r=>r.date>t).sort((a,b)=>a.date.localeCompare(b.date))[0];
     el.innerHTML = `<div class="today-banner no-res" style="margin:10px 16px 0">
       <div class="ti">📅</div>
       <div><div class="lbl">DNES bez rezervace</div>
       <div class="val">${next ? DAY_CS[pd(next.date).getDay()]+' '+pd(next.date).getDate()+'. → '+next.loc : 'Žádná rezervace'}</div>
-      ${next?`<div class="sv">${next.car}</div>`:''}</div>
+      ${next?`<div class="sv">${next.car} · ${next.user}</div>`:''}</div>
+    </div>`;
+  } else if (todayRes.some(r=>r.dup)) {
+    el.innerHTML = `<div class="today-banner dup" style="margin:10px 16px 0">
+      <div class="ti">⚠️</div>
+      <div><div class="lbl">DNES — DUPLICITA K ŘEŠENÍ</div>
+      <div class="val">${todayRes[0].loc}</div>
+      <div class="sv">${todayRes.map(r=>r.user+': '+r.car).join(' / ')}</div></div>
+    </div>`;
+  } else {
+    const r = todayRes[0];
+    el.innerHTML = `<div class="today-banner ${CAR_KEY[r.car]||'mini'}" style="margin:10px 16px 0">
+      <div class="ti">🚘</div>
+      <div><div class="lbl">DNES parkuješ v</div><div class="val">${r.loc}</div>
+      <div class="sv">${r.car} · ${r.user}</div></div>
     </div>`;
   }
 }
@@ -203,7 +213,7 @@ function render() {
       <div class="info">
         <div class="loc">${isToday?'<div class="today-dot"></div>':''}${r.loc}</div>
         <span class="car-tag car-${CAR_KEY[r.car]||'mini'}">${r.car}</span>
-        ${r.note?`<div class="note-text">${r.note}</div>`:''}
+        <span class="user-tag">· ${r.user}</span>
       </div>
     </div>`;
   }).join('');
