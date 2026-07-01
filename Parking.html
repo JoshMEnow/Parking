@@ -134,7 +134,7 @@ function pd(s) { const [y,m,d]=s.split('-'); return new Date(+y,+m-1,+d); }
 
 const upd = new Date(UPDATED);
 document.getElementById('updated').textContent =
-  `Aktualizováno ${upd.getDate()}. ${MON_CS[upd.getMonth()]} ${upd.getFullYear()}`;
+  `Aktualizováno ${String(upd.getDate()).padStart(2,'0')}.${String(upd.getMonth()+1).padStart(2,'0')}.${upd.getFullYear()} ${String(upd.getHours()).padStart(2,'0')}:${String(upd.getMinutes()).padStart(2,'0')}`;
 
 function renderBanner() {
   const t = today();
