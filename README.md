@@ -2,6 +2,34 @@
 
 Systém pro sledování rezervací firemního parkování pro dva uživatele s mobilním přístupem.
 
+---
+
+## 📱 Postup update z mobilu (iPhone)
+
+### 1. Nahraj screenshot do GitHub
+1. Otevři **GitHub app** (App Store) → repozitář `Parking`
+2. Přejdi do složky `[IN]`
+3. Klikni **+** → *Upload file* → vyber screenshot z parkovacího systému
+4. Screenshot musí mít dole text s instrukcí, např. `Úterý audi, zbytek mini`
+5. **Commit** přímo v aplikaci
+
+### 2. Stáhni změny na NTB
+1. Otevři **GitHub Desktop** na notebooku
+2. Klikni **Fetch origin** → pak **Pull origin**
+3. Nový screenshot se objeví v `[IN]` složce lokálně
+
+### 3. Nech Claudovi zpracovat
+1. Otevři **Cowork** na notebooku
+2. Napiš: **"zpracuj nové screenshoty v [IN]"**
+3. Claude vytěží data a aktualizuje `Parking.html`
+
+### 4. Publikuj
+1. V **GitHub Desktop**: **Commit → Push**
+2. Za 1–2 minuty je report živý na `https://JoshMEnow.github.io/Parking/Parking.html`
+3. Na mobilu klikni **↻** pro aktualizaci
+
+---
+
 ## Co to dělá
 
 - Čte screenshoty z parkovacího systému uložené ve složce `[IN]`
