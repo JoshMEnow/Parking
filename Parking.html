@@ -31,7 +31,7 @@
   .today-banner .val { font-size: 18px; font-weight: 700; line-height: 1.2; }
   .today-banner .sv  { font-size: 13px; opacity: 0.85; margin-top: 1px; }
 
-  .car-tabs { display: flex; gap: 8px; padding: 12px 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .car-tabs { display: flex; gap: 8px; padding: 10px 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .car-tabs::-webkit-scrollbar { display: none; }
   .car-tab { flex-shrink: 0; border: none; border-radius: 20px; padding: 7px 16px; font-size: 13px; font-weight: 600; cursor: pointer; background: #e5e5ea; color: #8e8e93; }
   .car-tab.active-all    { background: #1c1c1e; color: #fff; }
@@ -86,24 +86,21 @@
     </div>
   </div>
   <div class="updated" id="updated"></div>
+  <div class="car-tabs">
+    <button class="car-tab active-all" id="ct-all"    onclick="setCar('all')">Vše</button>
+    <button class="car-tab"            id="ct-mini"   onclick="setCar('mini')">🚙 Mini Cooper <span style="opacity:.6;font-size:11px">7AY8867</span></button>
+    <button class="car-tab"            id="ct-audi"   onclick="setCar('audi')">🚗 Audi Q7 <span style="opacity:.6;font-size:11px">6AK5140</span></button>
+    <button class="car-tab"            id="ct-kodiaq" onclick="setCar('kodiaq')">🚐 Kodiaq <span style="opacity:.6;font-size:11px">8AN9096</span></button>
+  </div>
+  <div class="time-tabs">
+    <button class="time-tab active" onclick="setTime('upcoming')">Nadcházející</button>
+    <button class="time-tab"        onclick="setTime('past')">Historie</button>
+    <button class="time-tab"        onclick="setTime('all')">Vše</button>
+  </div>
+  <div class="section-title" id="sec-title">Rezervace</div>
 </div>
 
 <div id="today-banner"></div>
-
-<div class="car-tabs">
-  <button class="car-tab active-all" id="ct-all"    onclick="setCar('all')">Vše</button>
-  <button class="car-tab"            id="ct-mini"   onclick="setCar('mini')">🚙 Mini Cooper <span style="opacity:.6;font-size:11px">7AY8867</span></button>
-  <button class="car-tab"            id="ct-audi"   onclick="setCar('audi')">🚗 Audi Q7 <span style="opacity:.6;font-size:11px">6AK5140</span></button>
-  <button class="car-tab"            id="ct-kodiaq" onclick="setCar('kodiaq')">🚐 Kodiaq <span style="opacity:.6;font-size:11px">8AN9096</span></button>
-</div>
-
-<div class="time-tabs">
-  <button class="time-tab active" onclick="setTime('upcoming')">Nadcházející</button>
-  <button class="time-tab"        onclick="setTime('past')">Historie</button>
-  <button class="time-tab"        onclick="setTime('all')">Vše</button>
-</div>
-
-<div class="section-title" id="sec-title">Rezervace</div>
 <div class="res-list" id="res-list"></div>
 
 <script>
