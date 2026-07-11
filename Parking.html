@@ -12,7 +12,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1c1c1e; min-height: 100vh; padding-bottom: env(safe-area-inset-bottom); }
 
-  .header { background: #fff; padding: 16px 16px 12px; padding-top: calc(16px + env(safe-area-inset-top)); border-bottom: 1px solid #e5e5ea; position: sticky; top: 0; z-index: 10; }
+  .header { background: #fff; padding: 16px 16px 12px; padding-top: calc(16px + env(safe-area-inset-top)); border-bottom: 1px solid #e5e5ea; position: -webkit-sticky; position: sticky; top: 0; z-index: 10; }
   .header-top { display: flex; align-items: center; justify-content: space-between; }
   .header h1 { font-size: 20px; font-weight: 700; }
   .header .updated { font-size: 12px; color: #8e8e93; margin-top: 2px; }
@@ -33,7 +33,9 @@
 
   .car-tabs { display: flex; gap: 8px; padding: 10px 16px 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .car-tabs::-webkit-scrollbar { display: none; }
-  .car-tab { flex-shrink: 0; border: none; border-radius: 20px; padding: 7px 16px; font-size: 13px; font-weight: 600; cursor: pointer; background: #e5e5ea; color: #8e8e93; }
+  .car-tab { flex: 1 1 0; min-width: 72px; border: none; border-radius: 14px; padding: 8px 10px; font-size: 13px; font-weight: 600; cursor: pointer; background: #e5e5ea; color: #8e8e93; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .tab-car { font-size: 13px; font-weight: 600; }
+  .tab-rz  { font-size: 11px; font-weight: 500; opacity: 0.7; }
   .car-tab.active-all    { background: #1c1c1e; color: #fff; }
   .car-tab.active-mini   { background: #1a7f40; color: #fff; }
   .car-tab.active-audi   { background: #0055b3; color: #fff; }
@@ -87,10 +89,10 @@
   </div>
   <div class="updated" id="updated"></div>
   <div class="car-tabs">
-    <button class="car-tab active-all" id="ct-all"    onclick="setCar('all')">Vše</button>
-    <button class="car-tab"            id="ct-mini"   onclick="setCar('mini')">🚙 Mini Cooper <span style="opacity:.6;font-size:11px">7AY8867</span></button>
-    <button class="car-tab"            id="ct-audi"   onclick="setCar('audi')">🚗 Audi Q7 <span style="opacity:.6;font-size:11px">6AK5140</span></button>
-    <button class="car-tab"            id="ct-kodiaq" onclick="setCar('kodiaq')">🚐 Kodiaq <span style="opacity:.6;font-size:11px">8AN9096</span></button>
+    <button class="car-tab active-all" id="ct-all"    onclick="setCar('all')"><span class="tab-car">Vše</span></button>
+    <button class="car-tab"            id="ct-mini"   onclick="setCar('mini')"><span class="tab-car">🚙 Mini</span><span class="tab-rz">7AY8867</span></button>
+    <button class="car-tab"            id="ct-audi"   onclick="setCar('audi')"><span class="tab-car">🚗 Audi Q7</span><span class="tab-rz">6AK5140</span></button>
+    <button class="car-tab"            id="ct-kodiaq" onclick="setCar('kodiaq')"><span class="tab-car">🚐 Kodiaq</span><span class="tab-rz">8AN9096</span></button>
   </div>
   <div class="time-tabs">
     <button class="time-tab active" onclick="setTime('upcoming')">Nadcházející</button>
