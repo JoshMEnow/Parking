@@ -50,10 +50,12 @@ Parking/
 ## Report (Parking.html)
 
 - Banner **DNES** — okamžitě vidíš kde dnes parkuješ a jakým autem
-- Záložky aut: Vše / Mini Cooper / Audi Q7 / Kodiaq
+- Záložky aut: Vše / 🚙 Mini / 🚗 Audi / 🚐 Kodiaq — každé s RZ a barvou auta při výběru
 - Záložky času: Nadcházející / Historie / Vše
 - Duplicity označeny oranžově ⚠️
-- Funguje jako webová zkratka na iPhone
+- Tlačítko **↻** vpravo nahoře pro aktualizaci (obchází cache iOS)
+- Zobrazuje čas posledního refreshe uživatelem
+- Funguje jako webová zkratka na iPhone (Safari i Chrome)
 
 **URL:** `https://JoshMEnow.github.io/Parking/Parking.html`
 
@@ -73,13 +75,13 @@ Parking/
 - Nahrává screenshoty přes **GitHub app** (App Store) do složky `[IN]`
 - Report čte na stejné URL v Safari/Chrome
 
-## Auta a barvy
+## Auta, RZ a barvy
 
-| Auto | Barva |
-|---|---|
-| 🚙 Mini Cooper | zelená |
-| 🚗 Audi Q7 | modrá |
-| 🚐 Kodiaq | hnědá |
+| Auto | RZ | Barva tlačítka | Barva pruhu |
+|---|---|---|---|
+| 🚙 Mini Cooper | 7AY8867 | britská zelená | zelená |
+| 🚗 Audi Q7 | 6AK5140 | bílá | modrá |
+| 🚐 Kodiaq | 8AN9096 | vesmírná šedá | hnědá |
 
 ## Lokace
 
