@@ -36,10 +36,10 @@
   .car-tab { flex: 1 1 0; min-width: 72px; border: none; border-radius: 14px; padding: 8px 10px; font-size: 13px; font-weight: 600; cursor: pointer; background: #e5e5ea; color: #8e8e93; display: flex; flex-direction: column; align-items: center; gap: 3px; }
   .tab-car { font-size: 13px; font-weight: 600; }
   .tab-rz  { font-size: 11px; font-weight: 500; opacity: 0.7; }
-  .car-tab.active-all    { background: #1c1c1e; color: #fff; }
-  .car-tab.active-mini   { background: #1a7f40; color: #fff; }
-  .car-tab.active-audi   { background: #0055b3; color: #fff; }
-  .car-tab.active-kodiaq { background: #8b5a00; color: #fff; }
+  .car-tab.active-all    { background: #fff; color: #1c1c1e; box-shadow: inset 0 0 0 2px #e5e5ea; }
+  .car-tab.active-mini   { background: #1a6b3c; color: #fff; }
+  .car-tab.active-audi   { background: #ffffff; color: #1c1c1e; box-shadow: inset 0 0 0 1.5px #bbb; }
+  .car-tab.active-kodiaq { background: #868b91; color: #fff; }
 
   .time-tabs { display: flex; margin: 8px 16px; background: #e5e5ea; border-radius: 10px; padding: 2px; }
   .time-tab { flex: 1; text-align: center; padding: 6px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; color: #8e8e93; border: none; background: none; }
@@ -89,7 +89,7 @@
   </div>
   <div class="updated" id="updated"></div>
   <div class="car-tabs">
-    <button class="car-tab active-all" id="ct-all"    onclick="setCar('all')"><span class="tab-car">Vše</span></button>
+    <button class="car-tab active-all" id="ct-all"    onclick="setCar('all')" style="flex:0 0 56px"><span class="tab-car">Vše</span></button>
     <button class="car-tab"            id="ct-mini"   onclick="setCar('mini')"><span class="tab-car">🚙 Mini</span><span class="tab-rz">7AY8867</span></button>
     <button class="car-tab"            id="ct-audi"   onclick="setCar('audi')"><span class="tab-car">🚗 Audi</span><span class="tab-rz">6AK5140</span></button>
     <button class="car-tab"            id="ct-kodiaq" onclick="setCar('kodiaq')"><span class="tab-car">🚐 Kodiaq</span><span class="tab-rz">8AN9096</span></button>
