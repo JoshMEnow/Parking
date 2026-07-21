@@ -90,3 +90,25 @@ Parking/
 | SHQ0 | modrá |
 | NHQ0 | oranžová |
 | HHQ0 / Bazén | fialová |
+
+## Logika zpracování screenshotů
+
+- **Uživatel** se čte z horní části screenshotu (`You` = Josh, `Andreika` = Andreika)
+- **Instrukce** (typ auta) se čte z dolního textu, např. `minik`, `Úterý audi, zbytek mini`
+- **Duplicita**: stejné datum od různých uživatelů → označeno ⚠️
+- **Update**: stejné datum od stejného uživatele → přepíše předchozí záznam
+- **Zrušení**: datum chybí v novějším screenshotu stejného uživatele → odstraněno z dat
+- **Zpracované soubory**: označeny `.done` markerem v `[IN]` (binární soubory nelze přesunout)
+
+## Technologický stack
+
+| Vrstva | Technologie |
+|---|---|
+| Hosting | GitHub Pages (zdarma, statický HTML) |
+| Správa kódu | GitHub + GitHub Desktop (Windows) |
+| Vstup dat | GitHub app (iOS) → složka `[IN]` |
+| Zpracování | Claude / Cowork — čtení obrázků, extrakce dat, aktualizace HTML |
+| Frontend | Vanilla HTML/CSS/JS, žádné závislosti |
+| Mobilní přístup | Safari / Chrome na iPhone (shortcut na domovskou obrazovku) |
+
+**Čas přípravy:** ~5,5 hodiny aktivní práce rozložených do 22 dní (29. 6. – 21. 7. 2026), 13 pracovních bloků, 923 zpráv v konverzaci.
